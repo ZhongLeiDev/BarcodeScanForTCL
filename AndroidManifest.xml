@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zkc.barcodescan"
+    android:versionCode="7"
+    android:versionName="2.7" >
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="24" />
+
+
+    <uses-permission android:name="android.permission.INJECT_EVENT" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" >
+    </uses-permission>
+
+    <uses-permission android:name="android.permission.VIBRATE" /> 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_LOGS" /> 
+ 
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/show_name" >
+
+        <!-- 按键广播 -->
+        <receiver
+            android:name="com.zkc.Receiver.RemoteControlReceiver"
+            android:permission="com.zkc.keycode" >
+            <intent-filter>
+                <intent-filter android:priority="1000" />
+
+                <action android:name="com.zkc.keycode" />
+            </intent-filter>
+        </receiver> 
+        <!-- 广播接收 -->
+          <receiver android:name="com.zkc.Receiver.StartReceiver" >
+            <intent-filter android:priority="996" />
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </receiver>   
+        <!-- 扫描服务 -->
+        <service android:name="com.zkc.Service.CaptureService" >
+            <intent-filter>
+                <action android:name="com.zkc.Service.CaptureService" />
+            </intent-filter>
+        </service> 
+        <activity
+            android:name="com.zl.mainactivity.MenuSelectActivity"
+            android:label="@string/show_name"
+            android:screenOrientation="locked">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="BarCodeScan" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="info" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zl.whaley_soap.SoapMainActivity"
+            android:label="@string/whaleyscan" 
+            android:screenOrientation="locked" >
+        </activity>
+        <activity
+            android:name="com.zl.letv_soap.Letv_SoapMainActivity"
+            android:label="@string/letvscan" 
+            android:screenOrientation="locked" >
+        </activity>
+        <activity
+            android:name="com.zl.offline_style.Offline_MainActivity"
+            android:label="@string/offlinescan" 
+            android:screenOrientation="locked" >
+        </activity>
+        <activity
+            android:name="com.zkc.barcodescan.activity.ActivityBarcodeSetting"
+            android:label="@string/show_name" 
+            android:screenOrientation="locked" >
+        </activity>
+        <activity
+            android:name="com.zkc.barcodescan.activity.ActivityQrcodeSetting"
+            android:label="@string/show_name" 
+            android:screenOrientation="locked" >
+        </activity>
+        <activity
+            android:name="com.zkc.barcodescan.activity.DialogEncodingActivity"
+            android:label="@string/show_name" 
+            android:screenOrientation="locked" >
+        </activity>
+        <activity
+            android:name="com.zl.whaley_dbsetting.DBHandleActivity"
+            android:label="@string/whaleyscan" 
+            android:screenOrientation="locked" >
+        </activity>
+        <activity
+            android:name="com.zl.whaley_dbsetting.ConfigActivity"
+            android:label="@string/whaleyscan" 
+            android:screenOrientation="locked" >
+        </activity>
+        <activity
+            android:name="com.zl.whaley_dbsetting.BatchHandleActivity"
+            android:label="@string/whaleyscan" 
+            android:screenOrientation="locked" >
+        </activity>
+        <activity
+            android:name="com.zl.letv_dbsetting.Letv_DBHandleActivity"
+            android:label="@string/letvscan" 
+            android:screenOrientation="locked" >
+        </activity>
+        <activity
+            android:name="com.zl.letv_dbsetting.Letv_ConfigActivity"
+            android:label="@string/letvscan" 
+            android:screenOrientation="locked" >
+        </activity>
+        <activity
+            android:name="com.zl.letv_dbsetting.Letv_BatchHandleActivity"
+            android:label="@string/letvscan" 
+            android:screenOrientation="locked" >
+        </activity>
+        <activity
+            android:name="com.zl.offline_style.Offline_DBHandleActivity"
+            android:label="@string/offlinescan" 
+            android:screenOrientation="locked" >
+        </activity>
+        <activity
+            android:name="com.zl.offline_style.Offline_ConfigActivity"
+            android:label="@string/offlinescan" 
+            android:screenOrientation="locked" >
+        </activity>
+        <activity
+            android:name="com.zl.offline_style.Offline_BatchHandleActivity"
+            android:label="@string/offlinescan" 
+            android:screenOrientation="locked" >
+        </activity>
+        <activity
+            android:name="com.zl.cantv_style.Cantv_MainActivity"
+            android:label="@string/cantvscan" 
+            android:screenOrientation="locked" >
+        </activity>
+        <activity
+            android:name="com.zl.upc_style.Upc_MainActivity"
+            android:label="@string/upcscan" 
+            android:screenOrientation="locked" >
+        </activity>
+        <activity
+            android:name="com.zl.mitv_soap.Mitv_SoapMainActivity"
+            android:label="@string/mitvscan" 
+            android:screenOrientation="locked" >
+        </activity>
+        <activity
+            android:name="com.zl.mitv_dbsetting.Mitv_DBHandleActivity"
+            android:label="@string/mitvscan" 
+            android:screenOrientation="locked" >
+        </activity>
+        <activity
+            android:name="com.zl.mitv_dbsetting.Mitv_ConfigActivity"
+            android:label="@string/mitvscan" 
+            android:screenOrientation="locked" >
+        </activity>
+        <activity
+            android:name="com.zl.mitv_dbsetting.Mitv_BatchHandleActivity"
+            android:label="@string/mitvscan" 
+            android:screenOrientation="locked" >
+        </activity>
+    </application>
+
+</manifest>

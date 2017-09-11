@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView    
+    xmlns:android="http://schemas.android.com/apk/res/android"    
+    android:layout_width="fill_parent"    
+    android:layout_height="fill_parent"    
+    android:scrollbars="vertical"    
+    android:fadingEdge="vertical">    
+    
+<LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:scrollbarStyle="outsideInset"    
+    android:orientation="vertical" >
+    
+     <TextView
+        android:id="@+id/offline"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="@string/blank"
+        android:background="@drawable/offline"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#0162CB"/>
+
+    <TextView
+        android:id="@+id/whaley"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="@string/blank"
+        android:background="@drawable/whaley"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#0162CB"/>
+
+    <TextView
+        android:id="@+id/letv"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="@string/blank"
+        android:background="@drawable/letv"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#0162CB"/>
+    
+    <TextView
+        android:id="@+id/cantv"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="@string/blank"
+        android:background="@drawable/cantv"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#0162CB"/>
+    
+    <TextView
+        android:id="@+id/bby"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="@string/blank"
+        android:background="@drawable/bby"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#0162CB"/>
+    
+    <TextView
+        android:id="@+id/mitv"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="@string/blank"
+        android:background="@drawable/mitv"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#0162CB"/>
+
+</LinearLayout>
+
+</ScrollView>
