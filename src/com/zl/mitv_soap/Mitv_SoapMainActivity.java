@@ -982,8 +982,8 @@ private Runnable buildExcel = new Runnable(){
 						 mac = "";
 					 }
 					 if((testresult == null)||(testresult.equals(""))){
-						 testresult = "EMPTY"; // DEBUG 模式
-						 //testresult = ""; //正常模式
+						 //testresult = "EMPTY"; // DEBUG 模式
+						 testresult = ""; //正常模式
 					 }
 					 if(outbond == null){
 						 outbond = "";
